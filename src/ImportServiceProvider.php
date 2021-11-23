@@ -14,7 +14,7 @@ class ImportServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->make('Dws\Importify\ImportController');
-        $this->loadViewsFrom(__DIR__.'/../views', 'importify');
+        $this->loadViewsFrom(__DIR__.'/views', 'importify');
     }
 
     /**
@@ -24,6 +24,6 @@ class ImportServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/../routes/web.php';
+        include __DIR__.'/routes/web.php';
     }
 }
