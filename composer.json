@@ -1,0 +1,23 @@
+{
+    "name": "dws/importify",
+    "description": "A general package which can be used to import excel data to mysql database in laravel.",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Dws\\Importify\\": "src/"
+        }
+    },
+    "require": {
+        "rap2hpoutre/fast-excel": "dev-master"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dws\\Importify\\ImportServiceProvider"
+            ]
+        }
+    }
+
+}
