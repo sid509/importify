@@ -16,7 +16,7 @@ class ImportServiceProvider extends ServiceProvider
         $this->app->make('Dws\Importify\ImportController');
         $this->loadViewsFrom(__DIR__.'/views', 'importify');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/dws/files'),
+            __DIR__.'/views' => resource_path('resources/vendor/views/dws'),
         ]);
     }
 
