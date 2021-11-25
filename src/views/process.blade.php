@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .btn a{
+            text-decoration:none;
+            color:white;
+        }
+        </style>
 </head>
 <body>
 
@@ -46,7 +52,7 @@
             <!-- /.card-body -->
             <div class="card-footer mt-3">
                 <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Save</button>
-                <button type="reset" class="btn btn-danger"> <i class="fa fa-redo"></i> Cancel</button>
+                <button type="reset" class="btn btn-danger"> <i class="fa fa-redo"></i><a href="{{ url('importify/') }}"> Cancel</a></button>
             </div>
         </form>
     </div>
