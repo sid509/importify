@@ -23,8 +23,7 @@
         </div>
         @endif
         <form action="{{ url('process-files/') }}" method="POST" enctype="multipart/form-data">
-            <div class="card-body col-md-12">
-                <label style="padding-left: 20px;">For File :: {{ $fileName }} </label>
+            <div class="card-body">
                 <input type="hidden" name="fileName" value="{{ $fileName }}">
                 <input type="hidden" name="originalFileName" value="{{ $originalFileName }}">
                 <input type="hidden" name="fileExtension" value="{{ $fileExtension }}">
@@ -39,13 +38,13 @@
                 </div>
                 <div class="row">
                     <label for="contact_number" style="width:220px;padding-left:20px;">Table Field</label>
-                    <label for="contact_number" style="width:420px;padding-left:20px;">Row Field</label>
+                    <label for="contact_number" style="width:420px;padding-left:50px;">Row Field</label>
                 </div>
-                <div id="replaceWithNew">
+                <div id="replaceWithNew" class="form-group" style="margin-left:1%;">
                 </div>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer">
+            <div class="card-footer mt-3">
                 <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Save</button>
                 <button type="reset" class="btn btn-danger"> <i class="fa fa-redo"></i> Cancel</button>
             </div>
