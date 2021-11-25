@@ -92,8 +92,7 @@ class ImportController extends Controller
             }
         }
         $newData = collect($newData);
-        dd($request->originalFileName);
-        $path='storage/files/exported/'.$request->originalFileName;
+        $path=$request->originalFileName;
         FastExcel::data($collection)->export($path);
         $file = asset($path);
         if ($flag) {
