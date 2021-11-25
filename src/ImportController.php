@@ -5,6 +5,7 @@ namespace Dws\Importify;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 use Rap2hpoutre\FastExcel\Facades\FastExcel;
@@ -92,8 +93,11 @@ class ImportController extends Controller
             }
         }
         $newData = collect($newData);
-        $path=$request->originalFileName;
-        FastExcel::data($collection)->export($path);
+        if (!is_dir(public_path('exported'))) {
+            File::makeDirectory(public_path('exported'));
+        }
+        $path = asset('exported/' . $request->originalFileName);
+        FastExcel::data($collection)->export('exported/'.$request->originalFileName);
         $file = asset($path);
         if ($flag) {
             unlink('storage/files/excel/' . $request->fileName);
