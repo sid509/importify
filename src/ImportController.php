@@ -92,8 +92,9 @@ class ImportController extends Controller
             }
         }
         $newData = collect($newData);
-        FastExcel::data($collection)->export('public/exported/'.$request->originalFileName);
-        $file = asset('storage/exported/'.$request->originalFileName);
+        $path='storage/files/exported/'.$request->originalFileName;
+        FastExcel::data($collection)->export($path);
+        $file = asset($path);
         if ($flag) {
             unlink('storage/files/excel/' . $request->fileName);
             Session::flash('success_message', 'File inserted successfully.');
