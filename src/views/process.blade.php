@@ -26,6 +26,8 @@
             <div class="card-body col-md-12">
                 <label style="padding-left: 20px;">For File :: {{ $fileName }} </label>
                 <input type="hidden" name="fileName" value="{{ $fileName }}">
+                <input type="hidden" name="originalFileName" value="{{ $originalFileName }}">
+                <input type="hidden" name="fileExtension" value="{{ $fileExtension }}">
                 <div class="form-group">
                     <label for="contact_number">Tables</label>
                     <select name="table" id="tables_to_insert" class="form-control">
